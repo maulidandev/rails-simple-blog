@@ -1,12 +1,15 @@
-<p>
-    <strong>Commenter : </strong>
-    <%= comment.commenter %>
+<div class="media border-bottom pt-2 pb-2">
+    <div class="media-body">
+        <h5 class="mt-0">
+            <%= comment.commenter %>
 
-    <strong>Comment : </strong>
-    <%= comment.body %>
-
-    <%= link_to 'Destroy Comment', [comment.article, comment],
-        method: :delete,
-        data: {confirm: 'Are you sure?'}
-    %>
-</p>
+            <small>
+                <%= link_to 'Remove', [comment.article, comment],
+                    method: :delete,
+                    data: {confirm: 'Are you sure?'}
+                %>
+            </small>
+        </h5>
+        <%= comment.body %>
+    </div>
+</div>
